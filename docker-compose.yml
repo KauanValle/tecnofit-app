@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+    nginx:
+        image: lucasgnunes/nginx-php8
+        container_name: nginx_app
+        ports:
+            - '8080:80'
+        volumes:
+            - .:/var/www
+        networks:
+            - laravel
+
+    mysql:
+        image: mysql:8.0
+        container_name: mysql_app
+        environment:
+            MYSQL_DATABASE: tecnofit
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_PASSWORD: laravel
+            MYSQL_USER: laravel
+        ports:
+            - '3307:3306'
+        volumes:
+            - dbdata:/var/lib/mysql
+        networks:
+            - laravel
+networks:
+    laravel:
+volumes:
+    dbdata:
