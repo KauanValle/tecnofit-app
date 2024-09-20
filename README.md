@@ -84,3 +84,4 @@ Por padrão iria utilizar o swagger, porém não tive tempo o suficiente para im
 > 
 > **GET** /personalRecord/ranking - Essa rota é responsável por retornar uma lista com todos os recordes e com uma tag chamada "rank" para identificar o rank do usuario nos movimentos.
 >> No body
+
